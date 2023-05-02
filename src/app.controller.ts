@@ -5,9 +5,19 @@ import { Render } from '@nestjs/common';
 
 @Controller()
 export class AppController {
-  @Get()
+  @Get('/')
   @Render('index')
   index() {
+    return { articles };
+  }
+  @Get('/login')
+  @Render('login')
+  login() {
+    return { articles };
+  }
+  @Get('/register')
+  @Render('register')
+  register() {
     return { articles };
   }
 }

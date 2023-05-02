@@ -1,0 +1,30 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../CSS/Register.css' type='text/css')
+  script(src='../JS/Validation.js')
+  title Регистрация;
+.body-flex
+  .Back_Button
+    button.GoMain_button(onclick="window.location.href='/'") На главную
+  form.RegisterArea(action='' method='post')
+    .Username
+      input.UserName_Input(required='required' type='text' name='Name' placeholder='Имя*')
+    .E-mail
+      input.Email_Input(required='required' type='text' name='Email' placeholder='E-mail*' onchange='Email_Valid(value)')
+    .Password
+      input.Password_Input(required='required' type='Password' name='Password' placeholder='Пароль*' onchange='Password_Valid(value)')
+    .Password_Repeat
+      input.Password_Input_Repeat(required='required' type='Password' name='Password_Repeat' placeholder='Повторите пароль*' onchange='Match_Password(value)')
+    .Messages
+      ul
+        li.Valid_Email(hidden='hidden') Неправильный E-mail
+        li.Minimal_Password_Range(hidden='hidden') Минимальная длина пароля 8 символов
+        li.Wrong_Symbols_password(hidden='hidden') В пароле нельзя использовать специальные символы
+        li.Passwords_Dont_Mathces(hidden='hidden') Пароли не совпадают
+    button.KeepGoing(hidden='true') Регистрация
+  .HaveAccountDiv
+  a Есть аккаунт? 
+    button.HaveAccountBtn(onclick="window.location.href='/Login'") Войти

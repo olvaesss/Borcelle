@@ -1,0 +1,25 @@
+doctype html
+head
+  meta(charset='UTF-8')
+  meta(http-equiv='X-UA-Compatible' content='IE=edge')
+  meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel='stylesheet' href='../CSS/Login.css' type='text/css')
+  script(src='../JS/GoPage.js')
+  title Вход
+.Back_Button
+  button.GoMain_button(onclick="window.location.href='/'") На главную
+.Content_Box
+  form.LoginArea(action='' method='post')
+    .Login_input
+      a E-mail
+      input.Login_Input(required='required' type='text' name='Email')
+    .Password_input
+      a Пароль
+      input.Password_Input(required='required' type='Password' name='Password')
+    .Incorrect_Inputs(hidden='hidden')
+      a Неправильные данные
+    .Buttons
+      button.KeepGoing
+        a Войти
+      button.Register_button(onclick="window.location.href='/Register'")
+        a Зарегистрироваться
