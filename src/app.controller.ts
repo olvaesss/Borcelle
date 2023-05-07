@@ -1,24 +1,19 @@
-import { Controller, Get } from '@nestjs/common';
+import { Controller, Get} from '@nestjs/common';
 import { AppService } from './app.service';
-import { articles } from './articles';
 import { Render } from '@nestjs/common';
 
 @Controller()
 export class AppController {
   @Get('/')
   @Render('index')
-  index() {
-    return { articles };
-  }
+  index() {}
+
   @Get('/login')
   @Render('login')
-  login() {
-    return { articles };
-  }
+  login(){}
+
   @Get('/register')
   @Render('register')
-  register() {
-    return { articles };
-  }
+  register(){}
 }
 
