@@ -3,8 +3,6 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet' href='css/register.css' type='text/css')
-  script(src='../JS/Validation.js')
   title Регистрация;
 .body-flex
   .Back_Button
@@ -13,11 +11,11 @@ head
     .Username
       input.UserName_Input(required='required' type='text' name='Name' placeholder='Имя*')
     .E-mail
-      input.Email_Input(required='required' type='text' name='Email' placeholder='E-mail*' onchange='Email_Valid(value)')
+      input.Email_Input(required='required' type='text' name='Email' placeholder='E-mail*')
     .Password
-      input.Password_Input(required='required' type='Password' name='Password' placeholder='Пароль*' onchange='Password_Valid(value)')
+      input.Password_Input(required='required' type='Password' name='Password' placeholder='Пароль*' )
     .Password_Repeat
-      input.Password_Input_Repeat(required='required' type='Password' name='Password_Repeat' placeholder='Повторите пароль*' onchange='Match_Password(value)')
+      input.Password_Input_Repeat(required='required' type='Password' name='Password_Repeat' placeholder='Повторите пароль')
     .Messages
       ul
         li.Valid_Email(hidden='hidden') Неправильный E-mail
