@@ -1,22 +1,38 @@
-import { Body, Controller, Post} from '@nestjs/common';
+import { Body, Controller, Post, Redirect} from '@nestjs/common';
 import { UsersService } from './users.service';
 import { CreatePostDto } from 'src/classes';
 import { db } from 'src/firestore';
+import { map } from 'rxjs';
 
 @Controller('register')
 export class RegisterController {
     @Post()
-    create(@Body() createPostDto:CreatePostDto){
-        const docRef = db.collection('Users').doc(String(createPostDto.Email))
+    async create(@Body() createPostDto:CreatePostDto){
+        const docRef = db.collection('users').doc(String(createPostDto.Email))
         const doc = docRef.get()
-        return doc
+        if(!(await doc).exists){
+            docRef.set({createPostDto})
+        }
     }
 }
 
 @Controller('login')
 export class LoginContorller{
     @Post()
-    create():string {
-        return 'login post'
+    async create(@Body() createPostDto:CreatePostDto){
+        const docRef = db.collection('users').doc(String(createPostDto.Email))
+        const doc = docRef.get()
+        if((await doc).exists){
+            let databaseData = (await doc).data()
+                if((createPostDto.Email==databaseData.createPostDto.Email)&&(createPostDto.Password==databaseData.createPostDto.Password)){
+                    return "Succesful"
+                }
+                else{
+                    return "error"
+                }
+        }
+        else{
+            return "error"
+        }
     }
 }

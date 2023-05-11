@@ -1,6 +1,6 @@
 import { initializeApp, applicationDefault, cert } from 'firebase-admin/app';
 import { getFirestore, Timestamp, FieldValue } from 'firebase-admin/firestore';
-const serviceAccount = (`myshopwebsite-4ffa7-firebase-adminsdk-yojkb-a75865fe9e.json`);
+const serviceAccount = (`drycleaning-borcelle-firebase-adminsdk-7p85g-f8699fd2a0.json`);
 initializeApp({
     credential: cert(serviceAccount)
 });
