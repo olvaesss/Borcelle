@@ -4,16 +4,24 @@ import { Render } from '@nestjs/common';
 
 @Controller('/')
 export class AppController {
+
+  constructor(private appService: AppService){}
+
   @Get('/')
   @Render('index')
   index():void{}
 
-  @Get('/login')
+  @Get('/users/login')
   @Render('login')
   login():void{}
 
-  @Get('/register')
+  @Get('/users/register')
   @Render('register')
   register():void{}
+
+  @Get('Resources'+__filename)
+  Resources(){
+    return this.appService.Resources(__filename)
+  }
 }
 

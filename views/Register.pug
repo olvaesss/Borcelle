@@ -22,7 +22,7 @@ head
         li.Minimal_Password_Range(hidden='hidden') Минимальная длина пароля 8 символов
         li.Wrong_Symbols_password(hidden='hidden') В пароле нельзя использовать специальные символы
         li.Passwords_Dont_Mathces(hidden='hidden') Пароли не совпадают
-    button.KeepGoing(hidden='true') Регистрация
+    button.KeepGoing() Зарегистрироваться
   .HaveAccountDiv
   a Есть аккаунт? 
-    button.HaveAccountBtn(onclick="window.location.href='/Login'") Войти
+    button.HaveAccountBtn(onclick="window.location.href='/users/Login'") Войти

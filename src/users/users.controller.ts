@@ -1,38 +1,21 @@
-import { Body, Controller, Post, Redirect} from '@nestjs/common';
-import { UsersService } from './users.service';
-import { CreatePostDto } from 'src/classes';
-import { db } from 'src/firestore';
-import { map } from 'rxjs';
+import { Body, Controller, Get, Post} from '@nestjs/common';
+import { CreatePostDto, User} from 'src/classes';
+import {UsersService} from './users.service'
+import { create } from 'domain';
 
-@Controller('register')
-export class RegisterController {
-    @Post()
-    async create(@Body() createPostDto:CreatePostDto){
-        const docRef = db.collection('users').doc(String(createPostDto.Email))
-        const doc = docRef.get()
-        if(!(await doc).exists){
-            docRef.set({createPostDto})
-        }
+@Controller('users')
+export class UserController {
+
+
+    constructor(private userService: UsersService){}
+
+    @Post('Login')
+    Login(@Body() createPostDto:CreatePostDto){
+        this.userService.LoginUser(createPostDto)
     }
-}
-
-@Controller('login')
-export class LoginContorller{
-    @Post()
-    async create(@Body() createPostDto:CreatePostDto){
-        const docRef = db.collection('users').doc(String(createPostDto.Email))
-        const doc = docRef.get()
-        if((await doc).exists){
-            let databaseData = (await doc).data()
-                if((createPostDto.Email==databaseData.createPostDto.Email)&&(createPostDto.Password==databaseData.createPostDto.Password)){
-                    return "Succesful"
-                }
-                else{
-                    return "error"
-                }
-        }
-        else{
-            return "error"
-        }
+    
+    @Post('Register')
+    Register(@Body() createPostDto:CreatePostDto){
+        this.userService.RegisterUser(createPostDto)
     }
 }
