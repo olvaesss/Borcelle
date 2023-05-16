@@ -3,7 +3,7 @@ import { CreatePostDto} from 'src/classes';
 import {UsersService} from './users.service'
 
 @Controller('users')
-export class UserController {
+export class UsersController {
 
 
     constructor(private userService: UsersService){}

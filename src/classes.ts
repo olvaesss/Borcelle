@@ -7,10 +7,13 @@ export class User{
     Username=String;
     Email=String;
     Password=String;
+    Role=String;
+    Banned=Boolean;
 }
 
 export class CreatePostDto {
     Username:String;
     Email:String;
     Password:String;
+
 }
