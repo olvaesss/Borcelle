@@ -14,7 +14,7 @@ export class UsersService {
             let databaseData = (await doc).data()
             console.log(databaseData)
                 if((User.Email==databaseData.User.Email)&&(User.Password==databaseData.User.Password)){
-                    console.log('1')
+                    console.log('Success log in')
                 }
                 else{
                     console.log('Incorrect password')

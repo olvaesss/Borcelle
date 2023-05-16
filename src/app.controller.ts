@@ -1,4 +1,4 @@
-import { Controller, Get, Post} from '@nestjs/common';
+import { Controller, Get, Param, Post, Res} from '@nestjs/common';
 import { AppService } from './app.service';
 import { Render } from '@nestjs/common';
 
@@ -18,10 +18,20 @@ export class AppController {
   @Get('/users/register')
   @Render('register')
   register():void{}
-
-  @Get('Resources'+__filename)
-  Resources(){
-    return this.appService.Resources(__filename)
+  
+  @Get(`Resources/:filename`)
+  async getImagee(@Param("filename") filename: string, @Res() res: any) {
+    res.sendFile(filename, { root: 'src/Resources'});
+  }
+  
+  @Get(`styles/:filename`)
+  async getStyle(@Param('filename') filename: string, @Res() res: any) {
+    res.sendFile(filename, {root: 'src/styles'})
+  }  
+  
+  @Get(`Fonts/:filename`)
+  async getFontStyle(@Param('filename') filename: string, @Res() res: any) {
+    res.sendFile(filename, {root: 'src/Fonts'})
   }
 }
 

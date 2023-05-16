@@ -3,6 +3,8 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
+  link(rel="stylesheet", href="styles/Register.css")
+  link(rel="stylesheet", href="styles/MainStyles.css")
   title Регистрация;
 .body-flex
   .Back_Button
@@ -24,5 +26,5 @@ head
         li.Passwords_Dont_Mathces(hidden='hidden') Пароли не совпадают
     button.KeepGoing() Зарегистрироваться
   .HaveAccountDiv
-  a Есть аккаунт? 
+    a Есть аккаунт? 
     button.HaveAccountBtn(onclick="window.location.href='/users/Login'") Войти
