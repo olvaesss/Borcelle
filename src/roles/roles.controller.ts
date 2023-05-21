@@ -8,11 +8,11 @@ export class RolesController{
 
     @Get('/Get_All_Users')
     Get_All_Users(){
-        
+        this.RolesService.giveRole()
     }
 
     @Post('/SetRole')
     SetRole(){
-    
+        
     }
 }

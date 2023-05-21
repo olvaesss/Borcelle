@@ -1,4 +1,4 @@
-import { Body, Injectable, Redirect, Render } from '@nestjs/common';
+import { Body, Injectable} from '@nestjs/common';
 import {User , CreatePostDto} from '../classes'
 import { db } from 'src/firestore';
 
@@ -14,14 +14,14 @@ export class UsersService {
             let databaseData = (await doc).data()
             console.log(databaseData)
                 if((User.Email==databaseData.User.Email)&&(User.Password==databaseData.User.Password)){
-                    console.log('Success log in')
+                    return 200
                 }
                 else{
-                    console.log('Incorrect password')
+                    return 201
                 }
         }
         else{
-            console.log('No such user')
+            return 202
         }
     }
 

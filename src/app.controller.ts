@@ -11,6 +11,10 @@ export class AppController {
   @Render('index')
   index():void{}
 
+  @Get('/admin')
+  @Render('admin')
+  admin(): void{}
+
   @Get('/users/login')
   @Render('login')
   login():void{}
@@ -18,6 +22,10 @@ export class AppController {
   @Get('/users/register')
   @Render('register')
   register():void{}
+
+  @Get('Account')
+  @Render('Userpage')
+  Account():void{}
   
   @Get(`Resources/:filename`)
   async getImagee(@Param("filename") filename: string, @Res() res: any) {

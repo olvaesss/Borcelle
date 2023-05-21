@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Res} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Render, Res} from '@nestjs/common';
 import { CreatePostDto} from 'src/classes';
 import {UsersService} from './users.service'
 
@@ -17,6 +17,10 @@ export class UsersController {
     Register(@Body() createPostDto:CreatePostDto){
         this.userService.RegisterUser(createPostDto)
     }
+
+    @Get('Account')
+    @Render('Userpage')
+    Account():void{}
 
     @Get(`Resources/:filename`)
     async getImagee(@Param("filename") filename: string, @Res() res: any) {
