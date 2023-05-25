@@ -11,9 +11,7 @@ export class AppController {
   @Render('index')
   index():void{}
 
-  @Get('/admin')
-  @Render('admin')
-  admin(): void{}
+
 
   @Get('/users/login')
   @Render('login')

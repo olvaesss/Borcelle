@@ -1,6 +1,24 @@
 .Main_Container{
+    display: flex;
     height: 600px;
     width: 80%;
     margin-left: 10%;
     border: 2px black solid;
+    background-color: white;
+}
+
+.User_List{
+    height: max-content;
+    width: 30%;
+}
+
+body{
+    background-color: rgb(203, 203, 182);
+}
+.Current_User_Info{
+    margin-left: 2%;
+    border-left: 2px black solid;
+    border-right: 2px black solid;
+    width: 50%;
+    height: 100%;
 }

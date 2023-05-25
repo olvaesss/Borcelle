@@ -16,6 +16,6 @@ export class CreatePostDto {
     Username:String;
     Email:String;
     Password:String;
-    Role:String;
-    Banned:Boolean;
+    Role?:String;
+    Banned?:Boolean;
 }

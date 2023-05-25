@@ -3,12 +3,36 @@ head
   meta(charset='UTF-8')
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
-  link(rel='stylesheet' href='./src/styles/admin.css' type='text/css')
-  title Admin
+  link(rel='stylesheet' href='./styles/admin.css' type='text/css')
+  title admin
 div
-  a(href='/Admin') Admin Panel
+  button(onclick='window.location.href="/admin"') Admin
 div
-  a(href='/') Go Main
+  button(onclick='window.location.href="/"') Main
+h4 База данных Пользователей
+form(action="admin", method="get") 
+  button Refresh
 .Main_Container
   .Users_List
-  div
+    table 
+      tr
+        td №
+        td Почта
+        td Имя
+        td Пароль
+      each User, i in Users
+          tr
+            td #{i+1}
+            td #{JSON.stringify(Users[i].Email)}
+            td #{JSON.stringify(Users[i].Name)}
+            td #{JSON.stringify(Users[i].Password)}
+            td 
+              form(action="admin/more", method='get') 
+                button Подробнее
+              //- form(action="admin/ban", method="get") 
+              //-   button Ban User
+              //- form(action="admin/delete", method="get") 
+              //-   button Delete User
+  .Current_User_Info
+    h4 Подробная Информация
+

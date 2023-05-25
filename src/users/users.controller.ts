@@ -1,4 +1,4 @@
-import { Body, Controller, Get, Param, Post, Render, Res} from '@nestjs/common';
+import { Body, Controller, Get, Param, Post, Redirect, Render, Res} from '@nestjs/common';
 import { CreatePostDto} from 'src/classes';
 import {UsersService} from './users.service'
 
@@ -9,11 +9,13 @@ export class UsersController {
     constructor(private userService: UsersService){}
 
     @Post('Login')
+    @Redirect('/')
     Login(@Body() createPostDto:CreatePostDto){
         this.userService.LoginUser(createPostDto)
     }
     
     @Post('Register')
+    @Redirect('/')
     Register(@Body() createPostDto:CreatePostDto){
         this.userService.RegisterUser(createPostDto)
     }
