@@ -1,24 +1,38 @@
 .Main_Container{
-    display: flex;
+    display: grid;
+    grid-template-columns: 463px 1fr 1fr;
     height: 600px;
-    width: 80%;
-    margin-left: 10%;
+    width: 90%;
+    margin-left: 5%;
     border: 2px black solid;
     background-color: white;
 }
 
 .User_List{
     height: max-content;
-    width: 30%;
 }
 
 body{
     background-color: rgb(203, 203, 182);
 }
 .Current_User_Info{
-    margin-left: 2%;
     border-left: 2px black solid;
-    border-right: 2px black solid;
-    width: 50%;
+    border: 2px black solid;
     height: 100%;
+}
+
+table{
+    border-collapse: collapse;
+}
+td,tr{
+    border: 1px black solid;
+    margin: 0;
+}
+
+h2,h4{
+    text-align: center;
+}
+
+table{
+    max-width: 463px;
 }

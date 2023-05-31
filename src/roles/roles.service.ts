@@ -4,11 +4,7 @@ import {db} from '../firestore'
 @Injectable()
 export class RolesService{
 
-    giveRole(User=String, Role=String){
+    changeRole(User=String, Role=String){
         const CurrentUser = db.collection('users')
-    }
-
-    BanUser(){
-        
     }
 }

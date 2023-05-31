@@ -7,6 +7,9 @@ export class UserInfo{
     Email=String;
     Name=String;
     Password=String;
+    Created=Date;
+    Discount=Number;
+    Purchases=Number;
 }
 
 export const Users:UserInfo[] = []

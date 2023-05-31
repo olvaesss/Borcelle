@@ -6,13 +6,8 @@ import { RolesService } from "./roles.service";
 export class RolesController{
     constructor(private RolesService: RolesService){}
 
-    @Get('/Get_All_Users')
+    @Post('changeRole')
     Get_All_Users(){
-        this.RolesService.giveRole()
-    }
-
-    @Post('/SetRole')
-    SetRole(){
-        
+        this.RolesService.changeRole()
     }
 }

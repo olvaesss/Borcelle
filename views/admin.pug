@@ -4,35 +4,46 @@ head
   meta(http-equiv='X-UA-Compatible' content='IE=edge')
   meta(name='viewport' content='width=device-width, initial-scale=1.0')
   link(rel='stylesheet' href='./styles/admin.css' type='text/css')
+  script(src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js") 
   title admin
 div
   button(onclick='window.location.href="/admin"') Admin
 div
   button(onclick='window.location.href="/"') Main
-h4 База данных Пользователей
+h2 База данных Пользователей
 form(action="admin", method="get") 
   button Refresh
 .Main_Container
   .Users_List
+    h4 Лист Пользователей
     table 
       tr
         td №
         td Почта
         td Имя
-        td Пароль
+        td Роль
       each User, i in Users
           tr
             td #{i+1}
             td #{JSON.stringify(Users[i].Email)}
             td #{JSON.stringify(Users[i].Name)}
-            td #{JSON.stringify(Users[i].Password)}
+            td #{JSON.stringify(Users[i].Role)}
             td 
-              form(action="admin/more", method='get') 
-                button Подробнее
-              //- form(action="admin/ban", method="get") 
-              //-   button Ban User
-              //- form(action="admin/delete", method="get") 
-              //-   button Delete User
+              $.ajax({
+              
+              })
   .Current_User_Info
     h4 Подробная Информация
+    .Fields
+      p Имя
+      p Почта
+      p Пароль
+      p Дата Регистрации
+      p Покупки
+      p Скидка
+      p Роль
+    form(action="", method="get")
+  .AdminMenu
+    h4 Панель Администратора
+       
 
