@@ -1,13 +1,12 @@
-import { Controller, Post, Get} from "@nestjs/common";
-import { RolesService } from "./roles.service";
+import { Body, Controller, Put } from '@nestjs/common';
+import { RoleChange } from './roles.model';
+import { RolesService } from './roles.service';
 
-
-@Controller('Roles')
-export class RolesController{
+@Controller('roles')
+export class RolesController {
     constructor(private RolesService: RolesService){}
 
-    @Post('changeRole')
-    Get_All_Users(){
-        this.RolesService.changeRole()
-    }
-}
+    @Put('changeRole')
+    ChangeRole(@Body() createPostDto:RoleChange){
+        this.RolesService.changeRole(createPostDto)
+    }}

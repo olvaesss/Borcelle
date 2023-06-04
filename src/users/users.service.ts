@@ -36,7 +36,7 @@ export class UsersService {
         User.Discount=0
         User.Banned=false
         if(!(await doc).exists){
-            docRef.set({User})//По ссылке на элемент закидываю туда мапу
+            docRef.set(User)//По ссылке на элемент закидываю туда мапу
         }
         else{
             console.log('User also registered')

@@ -1,23 +1,23 @@
-// export class User{
-//     constructor(Username=String, Email=String, Password=String, Role=String, Banned=Boolean, Created=Date, Discount=Number, Purchases=Number){
-//         this.Username=Username;
-//         this.Email=Email;
-//         this.Password=Password;
-//         this.Role=Role;
-//         this.Banned=Banned
-//         this.Created=Created
-//         this.Discount=Discount
-//         this.Purchases=Purchases
-//     }
-//     Username=String;
-//     Email=String;
-//     Password=String;
-//     Role=String;
-//     Banned=Boolean;
-//     Created=Date;
-//     Discount=Number;
-//     Purchases=Number;
-// }
+export class User{
+    constructor(Username=String, Email=String, Password=String, Role=String, Banned=Boolean, Created=Date, Discount=Number, Purchases=Number){
+        this.Username=Username;
+        this.Email=Email;
+        this.Password=Password;
+        this.Role=Role;
+        this.Banned=Banned
+        this.Created=Created
+        this.Discount=Discount
+        this.Purchases=Purchases
+    }
+    Username=String;
+    Email=String;
+    Password=String;
+    Role=String;
+    Banned=Boolean;
+    Created=Date;
+    Discount=Number;
+    Purchases=Number;
+}
 
 export class RegisterUser{
     constructor(){

@@ -7,7 +7,6 @@ import { Users } from "./admin.model";
 export class AdminController{
 
     constructor(private adminService:AdminService){}
-
     @Get()
     @Render('admin')
     GetUsers(){
