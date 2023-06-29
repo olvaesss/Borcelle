@@ -16,22 +16,19 @@ form(action="admin", method="get")
 .Main_Container
   .Users_List
     h4 Лист Пользователей
-    table 
-      tr
-        td №
-        td Почта
-        td Имя
-        td Роль
-      each User, i in Users
-          tr
-            td #{i+1}
-            td #{JSON.stringify(Users[i].Email)}
-            td #{JSON.stringify(Users[i].Name)}
-            td #{JSON.stringify(Users[i].Role)}
-            td 
-              $.ajax({
-              
-              })
+      table 
+        tr
+          td №
+          td Почта
+          td Имя
+          td Роль
+        each User, i in Users
+            tr
+              td #{i+1}
+              td #{JSON.stringify([i].Email)}
+              td #{JSON.stringify([i].Name)}
+              td #{JSON.stringify([i].Role)}
+              td 
   .Current_User_Info
     h4 Подробная Информация
     .Fields

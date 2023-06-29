@@ -1,6 +1,7 @@
 import { Body, Injectable, Redirect, Session} from '@nestjs/common';
 import { LoginUser, RegisterUser} from './users.model';
 import { db } from 'src/firestore';
+import { json } from 'stream/consumers';
 
 
 @Injectable()
@@ -13,9 +14,8 @@ export class UsersService {
         if((await doc).exists){
             let databaseData = (await doc).data()
             console.log(databaseData)
-                if((User.Email==databaseData.User.Email)&&(User.Password==databaseData.User.Password)){
-                    sessionStorage.setItem('SessionUser', JSON.stringify(User))
-                    console.log(sessionStorage.getItem('SessionUser'))                    
+                if((User.Email==databaseData.Email)&&(User.Password==databaseData.Password)){ 
+                    
                 }
                 else{
                     return '201'
@@ -37,7 +37,7 @@ export class UsersService {
         User.Banned=false
         if(!(await doc).exists){
             docRef.set(User)//По ссылке на элемент закидываю туда мапу
-        }
+            }
         else{
             console.log('User also registered')
         }

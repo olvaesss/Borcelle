@@ -1,6 +1,7 @@
 import { Injectable } from "@nestjs/common";
-import {Users} from './admin.model'
+import {UserInfo, Users} from './admin.model'
 import { db } from "src/firestore";
+import { QueryDocumentSnapshot } from "firebase-admin/firestore";
 
 @Injectable()
 export class AdminService{
@@ -9,7 +10,9 @@ export class AdminService{
         const map = await ref.get()
         Users.length=map.size-map.size //Это первый и, надеюсь, единственный костыль
         map.forEach(doc=> {
-            Users.push(doc.data().User)
+            let User=doc.data();
+            console.log(User)
+            Users.push()
         })
         return (Users)
     }

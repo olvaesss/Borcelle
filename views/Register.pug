@@ -6,6 +6,17 @@ head
   link(rel="stylesheet", href="styles/Register.css")
   link(rel="stylesheet", href="styles/MainStyles.css")
   title Регистрация;
+script.
+  function asd(){
+  try{
+    sessionStorage.setItem('Login',document.querySelector('.Email_Input').value)
+    sessionStorage.setItem('Password',document.querySelector('.Password_Input').value)
+    alert("Успешная регистрация")
+  }
+  catch(error){
+    console.log('Error')
+  }
+  }
 .body-flex
   .Back_Button
     button.GoMain_button(onclick="window.location.href='/'") На главную
@@ -24,7 +35,7 @@ head
         li.Minimal_Password_Range(hidden='hidden') Минимальная длина пароля 8 символов
         li.Wrong_Symbols_password(hidden='hidden') В пароле нельзя использовать специальные символы
         li.Passwords_Dont_Mathces(hidden='hidden') Пароли не совпадают
-    button.KeepGoing() 
+    button.KeepGoing(onclick='asd()') 
       a Зарегистрироваться
   .HaveAccountDiv
     a Уже зарегестрированы? Войдите!!!

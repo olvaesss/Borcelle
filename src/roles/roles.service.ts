@@ -1,10 +1,10 @@
 import { Injectable } from '@nestjs/common';
 import { db } from 'src/firestore';
-import { RoleChange } from './roles.model';
+import { RoleChange, Role } from './roles.model';
 
 @Injectable()
 export class RolesService {
-    async changeRole(User:RoleChange){
+    async changeUserRole(User:RoleChange){
         const docRef = db.collection('users').doc(String(User.Email))
         const doc= await docRef.get()
         if(!doc.exists){
@@ -16,4 +16,27 @@ export class RolesService {
             docRef.set(Updated)
             console.log('Updated')
         }
-    }}
+    }
+    async CreateRole(Role:Role){
+        const docRef = db.collection('roles').doc(String(Role.Role))
+        const doc = await docRef.get()
+        console.log(Role)
+        if(doc.exists){
+            console.log("Role also created")
+        }
+        else{
+            docRef.set(Role)
+            console.log("Role with name:"+Role.Role+" has been created")
+        }
+    }
+    async GetRoleInfo(Role:Role){
+        const docRef = db.collection('roles').doc(String(Role.Role))
+        const doc = await docRef.get()
+        if(!doc.exists){
+            console.log("Role is not found")
+        }
+        else{
+            console.log(doc.data())
+        }
+    }
+}

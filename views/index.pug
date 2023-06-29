@@ -7,6 +7,17 @@ head
   link(rel="stylesheet", href="styles/index.css")
   link(rel="stylesheet", href="styles/MainStyles.css")
   title Borcelle
+script.
+  function asd(){
+  try{
+        let Email=sessionStorage.getItem('Email')
+        let Password = sessionStorage.getItem('Password')
+  }
+  catch(error){
+    alert("Неопознанная ошибка")
+    console.log(error)
+  }
+  }
 header
   a(href='/')
     img.Logo(src='/Resources/Logo.jpg')

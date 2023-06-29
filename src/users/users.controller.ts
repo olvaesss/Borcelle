@@ -9,7 +9,7 @@ export class UsersController {
     constructor(private userService: UsersService){}
 
     @Post('Login')
-    @Redirect('/')
+    @Redirect('/UsersPage')
     Login(@Body() createPostDto:RegisterUser){
         this.userService.LoginUser(createPostDto)
     }

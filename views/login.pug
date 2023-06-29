@@ -6,6 +6,18 @@ head
   link(rel="stylesheet", href="styles/Login.css")
   link(rel="stylesheet", href="styles/MainStyles.css")
   title Вход
+script.
+  function asd(){
+  try{
+    sessionStorage.setItem('Login',document.querySelector('.Login_Input').value)
+    sessionStorage.setItem('Password',document.querySelector('.Password_Input').value)
+    alert("Успешный вход")
+  }
+  catch(error){
+    console.log('Error')
+  }
+  }
+
 .Back_Button
   button.GoMain_button(onclick="window.location.href='/'") На главную
 .Content_Box
@@ -19,7 +31,7 @@ head
     .Incorrect_Inputs(hidden='hidden')
       a Неправильные данные
     .Buttons
-      button.KeepGoing
+      button.KeepGoing(onclick='asd()')
         a Войти
       button.Register_button(onclick="window.location.href='/users/register'")
         a Зарегистрироваться

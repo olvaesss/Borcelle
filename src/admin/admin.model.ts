@@ -1,9 +1,5 @@
 export class UserInfo{
-    constructor(Email=String,Name=String,Password=String){
-        this.Email=Email
-        this.Name=Name
-        this.Password=Password
-    }
+    Role=String;
     Email=String;
     Name=String;
     Password=String;
@@ -13,3 +9,4 @@ export class UserInfo{
 }
 
 export const Users:UserInfo[] = []
+
